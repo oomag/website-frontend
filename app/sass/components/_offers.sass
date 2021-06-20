@@ -1,0 +1,126 @@
+@import "vars"
+
+.offers
+	background: $colorAccent
+	padding: 160px 0 159px
+	.wrapper
+		max-width: 1118px
+	.section-title
+		text-align: center
+		margin: 0 0 48px
+	&-row
+		display: flex
+		flex-flow: row wrap
+		margin: 0 -20px
+	&-col
+		width: 50%
+		padding: 0 20px 40px
+		&:nth-child(1)
+			padding-top: 74px
+		&:nth-child(2)
+			.offers
+				&-wrap
+					padding-top: 30px
+				&-img
+					img,svg
+						max-width: 370px
+		&:nth-child(3)
+			padding-top: 2px
+		&:nth-child(4)
+			margin-top: -70px
+			.offers
+				&-img
+					img,svg
+						max-width: 352px
+	&-wrap
+		display: block
+		background: #fff
+		border-radius: 20px
+		padding: 48px 35px 40px
+		p
+			font-size: 16px
+			line-height: 1.5
+			font-weight: 600
+			color: #5E6882
+			letter-spacing: 0.002em
+			margin: 0 0 40px
+	&-img
+		img,svg
+			display: block
+			max-width: 388px
+			width: 100%
+			margin: 0 auto
+	&-title
+		display: block
+		font-size: 24px
+		line-height: 32px
+		font-weight: 600
+		letter-spacing: 0.002em
+		margin: 0 0 24px
+		a
+			color: #000033
+	&-link
+		display: inline-block
+		font-size: 16px
+		line-height: 22px
+		font-weight: 600
+		color: $colorMain
+		letter-spacing: 0.002em
+
+@media only screen and (max-width : 1200px)
+	.offers
+		padding: 100px 0
+
+@media only screen and (max-width : 920px)
+	.offers
+		&-row
+			margin: 0 -12px
+		&-col
+			padding: 0 12px 40px
+
+@media only screen and (max-width : 768px)
+	.offers
+		padding: 80px 0
+		&-col
+			width: 100%
+			padding-bottom: 40px
+			&:nth-child(1)
+				padding-top: 0
+			&:nth-child(3)
+				padding-top: 0
+			&:nth-child(4)
+				margin-top: 0
+		.btn-center
+			padding-top: 8px
+
+@media only screen and (max-width : 590px)
+	.offers
+		padding: 48px 0
+		.section-title
+			margin-bottom: 32px
+		&-col
+			padding-bottom: 32px
+		&-wrap
+			display: block
+			background: #fff
+			border-radius: 20px
+			padding: 40px 32px 32px
+			p
+				margin-bottom: 32px
+		&-img
+			margin-bottom: 8px
+
+@media only screen and (max-width : 380px)
+	.offers
+		padding: 64px 0
+		&-col
+			padding-bottom: 20px
+		&-wrap
+			padding: 40px 16px 24px
+			p
+				font-size: 14px
+				line-height: 22px
+		&-title
+			margin-bottom: 8px
+		.btn-center
+			padding-top: 4px

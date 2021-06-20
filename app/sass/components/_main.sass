@@ -1,0 +1,196 @@
+@import "vars"
+
+.main
+	background: $colorAccent
+	padding: 102px 0 154px
+	.wrapper
+		position: relative
+	&-info
+		max-width: 485px
+		position: relative
+		z-index: 10
+		p
+			font-size: 18px
+			line-height: 32px
+			font-weight: 600
+			color: #5E6882
+			letter-spacing: 0.002em
+	&-title
+		display: block
+		font-size: 52px
+		line-height: 66px
+		letter-spacing: 0.002em
+		font-weight: normal
+		margin: 0 0 20px
+		b
+			display: block
+			font-weight: bold
+	&-img
+		position: absolute
+		top: 52%
+		right: -28px
+		transform: translate(0,-50%)
+		img,svg
+			display: block
+			max-width: 816px
+	&-mob
+		display: none
+	&.main-2
+		padding: 150px 0 119px
+		.main
+			&-info
+				max-width: 480px
+				p
+					padding-bottom: 32px
+			&-title
+				font-size: 44px
+				line-height: 56px
+				b
+					display: inline
+			&-img
+				top: 47%
+				right: -17px
+				img,svg
+					max-width: 651px
+	&.main-4
+		padding-bottom: 247px
+
+@media only screen and (max-width : 1440px)
+	.main
+		&-img
+			img,svg
+				max-width: 630px
+
+@media only screen and (max-width : 1200px)
+	.main
+		padding: 64px 0 84px
+		&-info
+			max-width: 360px
+		&-title
+			font-size: 48px
+			line-height: 61px
+		&-img
+			top: 51%
+			right: -135px
+			img,svg
+				max-width: 690px
+		&.main-2
+			padding: 65px 0 80px
+			.main
+				&-img
+					right: 0
+					img,svg
+						max-width: 455px
+
+@media only screen and (max-width : 920px)
+	.main
+		padding: 20px 0 52px
+		&-info
+			max-width: 100%
+			p
+				font-size: 16px
+				line-height: 28px
+				margin-bottom: 24px
+			.primary-btn
+				span
+					padding: 14px 38px
+		&-title
+			font-size: 36px
+			line-height: 46px
+			padding-right: 300px
+		&-mob
+			display: block
+		&-img
+			top: -22px
+			right: 4px
+			transform: translate(0,0)
+			img,svg
+				max-width: 329px
+		&.main-2
+			padding: 28px 0 70px
+			.main
+				&-img
+					top: -50px
+					right: -32px
+					img,svg
+						max-width: 326px
+				&-info
+					p
+						margin: 0
+				&-title
+					font-size: 30px
+					line-height: 38px
+					padding-right: 100px
+					margin-bottom: 71px
+
+@media only screen and (max-width : 768px)
+	.main
+		&.main-2
+			.main
+				padding-bottom: 64px
+				&-img
+					position: static
+					transform: none
+					margin-top: -46px
+					padding-bottom: 40px
+					img,svg
+						width: 100%
+						margin: 0 auto
+				&-info
+					max-width: 100%
+					p
+						font-size: 16px
+						line-height: 28px
+						margin: 0
+						padding-bottom: 24px
+				&-title
+					padding: 0
+					margin-bottom: 24px
+		&.main-3
+			.main
+				&-img
+					margin-top: -20px
+					padding-bottom: 10px
+
+@media only screen and (max-width : 590px)
+	.main
+		padding-bottom: 64px
+		&-img
+			position: static
+			transform: none
+			margin-top: -46px
+			img,svg
+				max-width: 400px
+				width: 100%
+				margin: 0 auto
+		&-info
+			p
+				line-height: 32px
+				margin-bottom: 20px
+		&-title
+			font-size: 32px
+			line-height: 41px
+			padding: 0
+			b
+				display: inline
+
+@media only screen and (max-width : 380px)
+	.main
+		&-img
+			margin: -52px -20px 0
+		&-info
+			p
+				line-height: 24px
+		&-title
+			font-size: 28px
+			line-height: 40px
+		&.main-2
+			.main
+				&-img
+					img,svg
+						max-width: 280px
+		&.main-3
+			.main
+				&-title
+					font-size: 26px
+					line-height: 1.3

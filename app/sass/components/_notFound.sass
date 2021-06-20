@@ -1,0 +1,40 @@
+@import "vars"
+
+.notFound
+	display: flex
+	align-items: center
+	padding: 70px 0
+	.wrapper
+		width: 100%
+		display: flex
+		flex-flow: row nowrap
+		align-items: center
+	&-num
+		img,svg
+			display: block
+	p
+		max-width: 550px
+		padding-left: 140px
+		font-size: 32px
+		line-height: 38px
+		font-weight: 600
+		letter-spacing: 0.002em
+
+@media only screen and (max-width : 920px)
+	.notFound
+		p
+			padding-left: 50px
+
+@media only screen and (max-width : 768px)
+	.notFound
+		p
+			font-size: 24px
+			line-height: 1.3
+
+@media only screen and (max-width : 590px)
+	.notFound
+		text-align: center
+		.wrapper
+			display: block
+		p
+			padding: 30px 0 0

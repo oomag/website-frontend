@@ -1,0 +1,118 @@
+@import "vars"
+
+.prices
+	position: relative
+	&::before,&::after
+		content: ''
+		position: absolute
+		top: 0
+		width: 50%
+		height: 100%
+	&::before
+		left: 0
+		background-color: $colorAccent
+	&::after
+		right: 0
+		background-color: $colorMain
+	&-row
+		display: flex
+		flex-flow: row nowrap
+		position: relative
+		z-index: 10
+		margin: 0 -10px
+	&-col
+		width: 50%
+		display: flex
+		align-items: flex-end
+		padding: 120px 10px 120px
+		p
+			min-height: 96px
+			font-size: 16px
+			line-height: 1.5
+			font-weight: normal
+			color: #5E6882
+			letter-spacing: 0.002em
+		&__2
+			justify-content: center
+			p,.prices-subtitle
+				color: #fff
+	&-info
+		max-width: 416px
+		width: 100%
+	&-subtitle
+		display: block
+		font-size: 32px
+		line-height: 56px
+		font-weight: 600
+		letter-spacing: 0.002em
+		margin: 0 0 16px
+	&-title
+		display: block
+		font-size: 40px
+		line-height: 1.4
+		font-weight: bold
+		color: #000
+		letter-spacing: 0.002em
+		margin: 0 0 48px
+
+@media only screen and (max-width : 1200px)
+	.prices
+		&-row
+			margin: 0 -20px
+		&-col
+			padding: 80px 20px
+
+@media only screen and (max-width : 920px)
+	.prices
+		&::before,&::after
+			display: none
+		.wrapper
+			padding: 0
+		&-row
+			display: block
+			margin: 0
+		&-col
+			display: block
+			width: 100%
+			padding: 80px 32px
+			p
+				min-height: auto
+			&__1
+				background-color: $colorAccent
+			&__2
+				background-color: $colorMain
+		&-info
+			max-width: 100%
+
+@media only screen and (max-width : 768px)
+	.prices
+		margin-bottom: 100px
+		&-col
+			padding: 80px 24px 40px
+		&-title
+			font-size: 24px
+			line-height: 31px
+			margin-bottom: 32px
+		&-subtitle
+			font-size: 20px
+			line-height: 1.3
+			margin: 0 0 20px
+
+@media only screen and (max-width : 590px)
+	.prices
+		margin-bottom: 80px
+
+@media only screen and (max-width : 380px)
+	.prices
+		margin-bottom: 64px
+		&-col
+			padding: 48px 16px 32px
+			p
+				font-size: 14px
+				line-height: 22px
+		&-subtitle
+			font-size: 18px
+			line-height: 22px
+			margin-bottom: 16px
+		&-title
+			margin-bottom: 24px

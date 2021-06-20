@@ -1,0 +1,107 @@
+@import "vars"
+
+.footer
+	background: $colorAccent
+	padding: 90px 0 91px
+	&-row
+		display: flex
+		flex-flow: row nowrap
+		justify-content: space-between
+		padding-right: 260px
+		position: relative
+		.primary-btn
+			position: absolute
+			top: -10px
+			right: 0
+	&-col
+		padding-right: 30px
+		p
+			font-size: 16px
+			line-height: 1.5
+			color: #5E6882
+			letter-spacing: 0.002em
+			a
+				color: #5E6882
+		ul
+			padding-top: 6px
+			li
+				padding-bottom: 20px
+				a
+					display: inline-block
+					font-size: 16px
+					line-height: 20px
+					font-weight: 600
+					color: #5E6882
+					letter-spacing: 0.002em
+				&:first-child
+					display: block
+					a
+						color: #000
+	&-logo
+		padding-bottom: 44px
+		a,img,svg
+			display: block
+
+@media only screen and (max-width : 1200px)
+	.footer
+		padding: 64px 0 78px
+		&-row
+			padding: 92px 0 0
+			.primary-btn
+				top: 0
+		&-logo
+			position: absolute
+			top: 11px
+			left: 0
+		&-col
+			ul
+				padding: 0
+				li
+					display: none
+					padding: 0
+			&__4
+				padding-right: 0
+
+@media only screen and (max-width : 768px)
+	.footer
+		padding: 44px 0 55px
+		&-row
+			flex-flow: row wrap
+			justify-content: flex-start
+			padding-top: 75px
+		&-col
+			width: 33.333%
+			&__1
+				width: 100%
+				padding: 0 0 58px
+
+@media only screen and (max-width : 590px)
+	.footer
+		padding: 74px 0 54px
+		&-row
+			padding-top: 76px
+			justify-content: space-between
+		&-col
+			width: auto
+			&__1
+				width: 100%
+				padding-bottom: 50px
+
+@media only screen and (max-width : 380px)
+	.footer
+		padding: 69px 0 28px
+		&-row
+			display: block
+			padding: 0
+			.primary-btn
+				position: static
+		&-col
+			width: 100%
+			padding: 0 0 32px
+			p
+				padding-bottom: 24px
+			&__1
+				padding-bottom: 40px
+		&-logo
+			position: static
+			padding-bottom: 8px

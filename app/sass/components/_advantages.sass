@@ -1,0 +1,293 @@
+@import "vars"
+
+.advantages
+	&-block
+		padding: 160px 0 95px
+		&__second
+			.advantages
+				&-col
+					p
+						max-width: 300px
+	&-row
+		display: flex
+		flex-flow: row wrap
+		margin: 0 -15px
+	&-col
+		width: 33.333%
+		padding: 0 15px 65px
+		p
+			max-width: 220px
+			font-size: 16px
+			line-height: 22px
+			font-weight: normal
+			letter-spacing: 0.002em
+	&-ico
+		display: block
+		width: 120px
+		height: 120px
+		border-radius: 50%
+		background-color: $colorAccent
+		position: relative
+		margin: 0 0 40px
+		img,svg
+			display: block
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%,-50%)
+	&-info
+		max-width: 760px
+		padding: 15px 0 65px
+		font-size: 22px
+		line-height: 32px
+		font-weight: 600
+		color: #5E6882
+		letter-spacing: 0.002em
+	&-all
+		display: flex
+		flex-flow: row nowrap
+		justify-content: space-between
+		max-width: 1130px
+		padding-bottom: 160px
+		&__big
+			max-width: 100%
+	&-item
+		max-width: 500px
+		width: 100%
+		padding: 25px 20px 0 0
+		p
+			font-size: 16px
+			line-height: 1.5
+			//font-weight: 600
+			font-weight: normal
+			color: #5E6882
+			letter-spacing: 0.002em
+		&:last-child
+			padding: 25px 0 0
+	&-tit
+		display: block
+		font-size: 16px
+		line-height: 22px
+		font-weight: 600
+		letter-spacing: 0.002em
+		margin: 0 0 20px
+	&-subtitle
+		display: block
+		font-size: 16px
+		line-height: 22px
+		font-weight: bold
+		letter-spacing: 0.002em
+		margin: 0 0 16px
+	&-second
+		.advantages
+			&-col
+				p
+					max-width: 345px
+	&-instruments
+		padding: 160px 0 80px
+	&-logos
+		display: flex
+		flex-flow: row wrap
+		align-items: center
+		margin: 0 -28px
+	&-logo
+		padding: 0 28px 88px
+		img,svg,a
+			display: block
+	&-panel
+		padding-bottom: 50px
+		&:last-child
+			padding-bottom: 0
+		ul
+			li
+				font-size: 16px
+				line-height: 22px
+				font-weight: 600
+				color: #5E6882
+				letter-spacing: 0.002em
+				padding: 5px 0 5px 56px
+				position: relative
+				margin-bottom: 32px
+				&::after
+					content: ''
+					position: absolute
+					top: 50%
+					left: 0
+					transform: translate(0,-50%)
+					width: 32px
+					height: 32px
+					background-size: contain
+				&:last-child
+					margin-bottom: 0
+			&.list-minus
+				li
+					&::after
+						background: url(../img/icons/minus-ico.svg) no-repeat center
+			&.list-plus
+				li
+					&::after
+						background: url(../img/icons/plus-ico.svg) no-repeat center
+
+.info
+	background: $colorMain
+	border-radius: 40px
+	padding: 120px 96px
+	margin: 0 -95px
+	&-title
+		display: block
+		font-size: 40px
+		line-height: 1.4
+		//font-weight: bold
+		font-weight: 600
+		color: #fff
+		letter-spacing: 0.002em
+		margin: 0 0 16px
+	p
+		max-width: 820px
+		font-size: 20px
+		line-height: 1.6
+		font-weight: 600
+		color: rgba(#fff, 0.7)
+		letter-spacing: 0.002em
+	&-small
+		.info
+			&-title
+				max-width: 1130px
+				margin: 0
+
+@media only screen and (max-width : 1440px)
+	.info
+		margin: 0
+
+@media only screen and (max-width : 1200px)
+	.advantages
+		&-block
+			padding: 80px 0 45px
+			&__second
+				padding: 100px 0 30px
+		&-col
+			padding-bottom: 56px
+		&-ico
+			margin-bottom: 37px
+	.info
+		padding: 64px 48px
+
+@media only screen and (max-width : 920px)
+	.advantages
+		&-block
+			padding-bottom: 32px
+			&__second
+				padding: 80px 0 32px
+		&-row
+			margin: 0 -10px
+		&-col
+			padding: 0 10px 48px
+			p
+				font-size: 14px
+				line-height: 22px
+		&-ico
+			margin-bottom: 28px
+		&-info
+			padding: 0 0 48px
+		&-all
+			padding: 0 0 80px
+		&-item
+			padding-top: 0
+		&-instruments
+			padding: 80px 0 0
+	.info
+		padding: 48px 24px
+		&-title
+			font-size: 28px
+			line-height: 48px
+			margin-bottom: 20px
+		p
+			font-size: 18px
+			line-height: 32px
+
+@media only screen and (max-width : 768px)
+	.advantages
+		&-all
+			display: block
+		&-item
+			max-width: 100%
+			padding: 0 0 40px
+			&:last-child
+				padding: 0
+		&-instruments
+			padding-bottom: 45px
+		&-logos
+			margin: 0 -15px
+		&-logo
+			width: 33.333%
+			padding: 0 15px 35px
+	.info
+		&.info-small
+			.info
+				&-title
+					font-size: 24px
+					line-height: 31px
+
+@media only screen and (max-width : 590px)
+	.advantages
+		&-block
+			padding-bottom: 48px
+			&__second
+				padding: 64px 0 48px
+		&-col
+			width: 50%
+			padding-bottom: 32px
+		&-ico
+			width: 100px
+			height: 100px
+			margin-bottom: 20px
+			img,svg
+				max-width: 48px
+				max-height: 48px
+		&-info
+			font-size: 20px
+			padding-bottom: 32px
+		&-item
+			padding-bottom: 24px
+		&-instruments
+			padding: 70px 0 60px
+		&-panel
+			padding-bottom: 24px
+	.info
+		padding: 32px
+		&-title
+			font-size: 24px
+			line-height: 31px
+		p
+			font-size: 16px
+			line-height: 28px
+
+@media only screen and (max-width : 380px)
+	.advantages
+		&-info
+			font-size: 18px
+			line-height: 28px
+		&-item
+			p
+				font-size: 14px
+				line-height: 22px
+		&-instruments
+			padding: 64px 0 32px
+		&-logo
+			width: 50%
+			padding-bottom: 32px
+		&-big
+			.advantages
+				&-col
+					width: 100%
+	.info
+		padding: 32px 20px
+		p
+			font-size: 14px
+			line-height: 22px
+		&.info-small
+			padding: 32px 25px
+			.info
+				&-title
+					font-size: 18px
+					line-height: 24px

@@ -1,0 +1,80 @@
+@import "vars"
+
+.contacts
+	padding: 160px 0 180px
+	.wrapper
+		position: relative
+	&-wrap
+		max-width: 480px
+		position: relative
+		z-index: 20
+		.section-title
+			margin-bottom: 52px
+		p
+			max-width: 450px
+			font-size: 12px
+			line-height: 20px
+			font-weight: 600
+			color: #5E6882
+			letter-spacing: 0.002em
+			margin: -5px 0 23px
+		.primary-btn
+			span
+				background: #fff
+	&-img
+		position: absolute
+		top: -276px
+		right: -90px
+		img,svg
+			display: block
+			max-width: 815px
+
+@media only screen and (max-width : 1200px)
+	.contacts
+		padding: 100px 0
+		&-img
+			top: -190px
+			right: -170px
+			img,svg
+				max-width: 624px
+
+@media only screen and (max-width : 920px)
+	.contacts
+		padding: 80px 0
+		&-img
+			display: none
+		&-wrap
+			max-width: 100%
+			.section-title
+				max-width: 300px
+				margin-bottom: 40px
+
+@media only screen and (max-width : 768px)
+	.contacts
+		padding: 0 0 80px
+		&-wrap
+			p
+				margin: 0 0 24px
+		&-btn
+			display: flex
+			justify-content: center
+	.form-group
+		margin-bottom: 40px
+
+@media only screen and (max-width : 590px)
+	.contacts
+		padding-bottom: 110px
+		&-wrap
+			.section-title
+				margin-bottom: 32px
+			p
+				margin: -12px 0 32px
+	.form-group
+		margin-bottom: 32px
+
+@media only screen and (max-width : 380px)
+	.contacts
+		padding-bottom: 75px
+		&-wrap
+			p
+				margin-bottom: 12px
