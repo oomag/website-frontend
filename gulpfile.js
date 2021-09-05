@@ -13,8 +13,57 @@ var gulp           = require('gulp'),
 		ftp            = require('vinyl-ftp'),
 		notify         = require("gulp-notify"),
 		rsync          = require('gulp-rsync');
+		fileinclude 	 = require('gulp-file-include');
+		reload 			   = browserSync.reload;
+
+var path = {
+	dist: {
+		html: './dist',
+		htmlRu: './dist/ru/',
+		htmlEn: './dist/en/',
+		css: './dist/css/',
+		js: './dist/js/'
+	},
+	src: {
+		html: 'app/html/*.html',
+		htmlRu: 'app/html/ru/*.html',
+		htmlEn: 'app/html/en/*.html',
+		sass: 'app/sass/**/*.sass',
+		js: 'app/js'
+	},
+	watch: {
+		html: 'app/html/**/*.html',
+		sass: 'app/sass/**/*.sass',
+		js: 'app/js/common.js',
+		img: 'app/img/**/*.*'
+	}
+};
 
 // Скрипты проекта
+
+var config = {
+	server: {
+		baseDir: "dist"
+	},
+	tunnel: false,
+	host: 'localhost',
+	port: 3000,
+	logPrefix: "Frontend"
+};
+
+gulp.task('webserver', function () {
+	browserSync(config);
+});
+
+gulp.task('sass', function() {
+	return gulp.src(path.src.sass)
+		.pipe(sass({outputStyle: 'expand'}).on("error", notify.onError()))
+		.pipe(rename({suffix: '.min', prefix : ''}))
+		.pipe(autoprefixer(['last 15 versions']))
+		.pipe(cleanCSS()) // Опционально, закомментировать при отладке
+		.pipe(gulp.dest(path.dist.css))
+		.pipe(browserSync.reload({stream: true}));
+});
 
 gulp.task('common-js', function() {
 	return gulp.src([
@@ -22,7 +71,7 @@ gulp.task('common-js', function() {
 		])
 	.pipe(concat('common.min.js'))
 	.pipe(uglify())
-	.pipe(gulp.dest('app/js'));
+	.pipe(gulp.dest(path.src.js));
 });
 
 gulp.task('js', ['common-js'], function() {
@@ -31,48 +80,52 @@ gulp.task('js', ['common-js'], function() {
 		])
 	.pipe(concat('scripts.min.js'))
 	// .pipe(uglify()) // Минимизировать весь js (на выбор)
-	.pipe(gulp.dest('app/js'))
+	.pipe(gulp.dest(path.dist.js))
 	.pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('browser-sync', function() {
-	browserSync({
-		server: {
-			baseDir: 'app'
-		},
-		notify: false,
-		// tunnel: true,
-		// tunnel: "projectmane", //Demonstration page: http://projectmane.localtunnel.me
+gulp.task('html', function() {
+	gulp.src(path.src.htmlRu)
+		.pipe(fileinclude({
+			prefix: '@@',
+			basepath: '@file',
+			indent: true
+		}))
+		.pipe(gulp.dest(path.dist.htmlRu))
+		.pipe(reload({stream: true}));
+
+	gulp.src(path.src.htmlEn)
+		.pipe(fileinclude({
+			prefix: '@@',
+			basepath: '@file',
+			indent: true
+		}))
+		.pipe(gulp.dest(path.dist.html))
+		.pipe(reload({stream: true}));
+});
+
+gulp.task('watch', function() {
+	gulp.watch([path.watch.html], function(event, cb) {
+		gulp.start('html');
 	});
-});
-
-gulp.task('sass', function() {
-	return gulp.src('app/sass/**/*.sass')
-	.pipe(sass({outputStyle: 'expand'}).on("error", notify.onError()))
-	.pipe(rename({suffix: '.min', prefix : ''}))
-	.pipe(autoprefixer(['last 15 versions']))
-	.pipe(cleanCSS()) // Опционально, закомментировать при отладке
-	.pipe(gulp.dest('app/css'))
-	.pipe(browserSync.reload({stream: true}));
-});
-
-gulp.task('watch', ['sass', 'js', 'browser-sync'], function() {
-	gulp.watch('app/sass/**/*.sass', ['sass']);
-	gulp.watch(['libs/**/*.js', 'app/js/common.js'], ['js']);
-	gulp.watch('app/*.html', browserSync.reload);
+	gulp.watch([path.watch.sass], function(event, cb) {
+		gulp.start('sass');
+	});
+	gulp.watch([path.watch.js], function(event, cb) {
+		gulp.start('js');
+	});
 });
 
 gulp.task('imagemin', function() {
 	return gulp.src('app/img/**/*')
 	.pipe(cache(imagemin()))
-	.pipe(gulp.dest('dist/img')); 
+	.pipe(gulp.dest('dist/img'));
 });
 
-gulp.task('build', ['removedist', 'imagemin', 'sass', 'js'], function() {
+gulp.task('build', ['removedist', 'imagemin', 'html', 'sass', 'js'], function() {
 
 	var buildFiles = gulp.src([
-		'app/*.html',
-		'app/.htaccess',
+		'app/html/*.html',
 		]).pipe(gulp.dest('dist'));
 
 	var buildCss = gulp.src([
@@ -123,4 +176,4 @@ gulp.task('rsync', function() {
 gulp.task('removedist', function() { return del.sync('dist'); });
 gulp.task('clearcache', function () { return cache.clearAll(); });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['html', 'sass', 'js', 'webserver', 'watch']);

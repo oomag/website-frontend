@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>CI-CD - Order of Magnitude</title>
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/img/favicon/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/main.min.css">
+    <meta name="theme-color" content="#000">
+    <meta name="msapplication-navbutton-color" content="#000">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#000">
+    <meta name="facebook-domain-verification" content="d2rn01x07t12x0fo36uqd2p16xfzfe" />
+    <meta name="csrf-param" content="authenticity_token" />
+    <meta name="csrf-token" content="lfydbRr1bDHNH47TGmBBts48RDNQsXZGOZDT84yvBIc11K_1qgGsb5f12c3g5-UcBD6p64ordj43MMX0yR52_A" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110353783-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-110353783-1');
+    </script>
+    <!-- Facebook Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1242015389580653');
+      fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=1242015389580653&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <!-- Carrot quest BEGIN -->
+    <script type="text/javascript">
+      !function(){function t(t,e){return function(){window.carrotquestasync.push(t,arguments)}}if("undefined"==typeof carrotquest){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//cdn.carrotquest.app/api.min.js",document.getElementsByTagName("head")[0].appendChild(e),window.carrotquest={},window.carrotquestasync=[],carrotquest.settings={};for(var n=["connect","track","identify","auth","oth","onReady","addCallback","removeCallback","trackMessageInteraction"],a=0;a<n.length;a++)carrotquest[n[a]]=t(n[a])}}(),carrotquest.connect("44728-06dbe206ceb580200075cec772");
+    </script>
+    <!-- Carrot quest END -->
+</head>
+<body>
+<!-- start header -->
+<header class="header">
+    <div class="wrapper">
+        <div class="header-bar"><span></span></div>
+        <div class="header-logo"><a href="/"><img src="/img/logo.svg" alt=""></a></div>
+        <div class="header-menu">
+            <ul class="header-list">
+                <li class="drop drop-menu">
+                    <a href="#" class="drop-text">Services</a>
+                    <ul class="drop-list">
+                        <li><a href="/ci_cd">CI/CD</a></li>
+                        <li><a href="/monitoring">Monitoring</a></li>
+                        <li><a href="/design">System Engineering</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="header-actions">
+            <div class="drop drop-lang">
+                <div class="drop-text">En</div>
+                <ul class="drop-list">
+                    <li><a href="/ci_cd">En</a></li>
+                    <li><a href="/ru/ci_cd">Ru</a></li>
+                </ul>
+            </div>
+            <a href="#contacts" class="primary-btn"><span>Leave a request</span></a>
+        </div>
+    </div>
+</header>
+<div class="header-bg"></div>
+<!-- end header -->
+<!-- start main -->
+<section class="main main-2">
+    <div class="wrapper">
+        <div class="main-img"><img src="/img/main/img-2-min.png" alt=""></div>
+        <div class="main-info">
+            <h1 class="main-title"><b>CI/CD</b> (Continuous integration & Continuous delivery)</h1>
+            <p>Quick deployment is your competitive advantage in a market where taking your time could mean losing money. </p>
+            <a href="#contacts" class="primary-btn"><span>Request a Consultation</span></a>
+        </div>
+    </div>
+</section>
+<!-- end main -->
+<!-- start advantages -->
+<section class="advantages advantages-second">
+    <div class="wrapper">
+        <div class="advantages-block">
+            <h2 class="section-title">What does CI/CD include?</h2>
+            <div class="advantages-all">
+                <div class="advantages-item">
+                    <span class="advantages-tit">Continuous Integration (СI)</span>
+                    <p>Code updates are introduced frequently, up to several times a day. Each version is backed up in the repository. Automated testing is applied to every iteration. Continuous testing ensures that new pieces of code integrate smoothly into existing software, which speeds up the development process.</p>
+                </div>
+                <div class="advantages-item">
+                    <span class="advantages-tit">Continuous Delivery (СD)</span>
+                    <p>Continuous delivery means rolling-out code after each new integration. Continuous roll-out is a fully automated process that does not require supervision from the team.</p>
+                </div>
+            </div>
+            <h2 class="section-title">What you get as a result:</h2>
+            <div class="advantages-row advantages-big">
+                <div class="advantages-col">
+                    <div class="advantages-ico"><img src="/img/icons/ico-1.svg" alt=""></div>
+                    <h3 class="advantages-subtitle">Quick rollout</h3>
+                    <p>Ten times faster than the traditional development method.</p>
+                </div><!-- col -->
+                <div class="advantages-col">
+                    <div class="advantages-ico"><img src="/img/icons/ico-10.svg" alt=""></div>
+                    <h3 class="advantages-subtitle">High degree of stability</h3>
+                    <p>All errors and bottlenecks get eliminated upon testing.</p>
+                </div><!-- col -->
+                <div class="advantages-col">
+                    <div class="advantages-ico"><img src="/img/icons/ico-11.svg" alt=""></div>
+                    <h3 class="advantages-subtitle">Business advantages</h3>
+                    <p>Takes mere days to go from Idea to Release. You’re always ahead of the curve.</p>
+                </div><!-- col -->
+            </div>
+        </div>
+        <div class="info info-small">
+            <h2 class="info-title">OOMag will take your project’s development to a whole new level by integrating the CI/CD methodology.</h2>
+        </div>
+        <div class="advantages-instruments">
+            <h2 class="section-title">The tools we use</h2>
+            <div class="advantages-logos">
+                <div class="advantages-logo"><img src="/img/logos/img-1.svg" alt=""></div>
+                <div class="advantages-logo"><img src="/img/logos/img-2.svg" alt=""></div>
+                <div class="advantages-logo"><img src="/img/logos/img-10.svg" alt=""></div>
+                <div class="advantages-logo"><img src="/img/logos/img-3.svg" alt=""></div>
+                <div class="advantages-logo"><img src="/img/logos/img-4.svg" alt=""></div>
+                <div class="advantages-logo"><img src="/img/logos/img-5.svg" alt=""></div>
+                <div class="advantages-logo"><img src="/img/logos/img-6.svg" alt=""></div>
+                <div class="advantages-logo"><img src="/img/logos/img-7.svg" alt=""></div>
+                <div class="advantages-logo"><img src="/img/logos/img-8.svg" alt=""></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end advantages -->
+<!-- start prices -->
+<section class="prices">
+    <div class="wrapper">
+        <div class="prices-row">
+            <div class="prices-col prices-col__1">
+                <div class="prices-info">
+                    <h3 class="prices-title">Our Prices</h3>
+                    <span class="prices-subtitle">The “СI/CD” Package</span>
+                    <p>Designing and integrating CI/CD for 1 project. Version control, automatic testing based on the customer’s cases.</p>
+                </div>
+            </div>
+            <div class="prices-col prices-col__2">
+                <div class="prices-info">
+                    <span class="prices-subtitle">1000$</span>
+                    <p>Includes up to 5 micro-services, but no more than 10 containers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end prices -->
+<!-- start contacts -->
+<section class="contacts" id="contacts">
+    <div class="wrapper">
+        <div class="contacts-wrap">
+            <h2 class="section-title">Do you need something extra? No problem! </h2>
+            <p>We’d be eager to discuss special terms for your project.</p>
+            <form id="callToAction">
+                <div class="form-group">
+                    <label class="form-label" for="i-1">Name</label>
+                    <input id="i-1" class="form-input" type="text" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="i-2">Phone number</label>
+                    <input id="i-2" class="form-input" type="text" />
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="i-3">E-mail</label>
+                    <input id="i-3" class="form-input" type="text" />
+                </div>
+                <p>By clicking on this button you hereby agree to the terms proposed in our <a href="#"> Privacy Policy</a>.</p>
+                <div class="contacts-btn">
+                    <button class="primary-btn"><span>Leave a Request</span></button>
+                </div>
+            </form>
+        </div>
+        <div class="contacts-img"><img src="/img/contacts/img-1-min.png" alt=""></div>
+    </div>
+</section>
+<!-- end contacts -->
+<!-- start footer -->
+<footer class="footer">
+    <div class="wrapper">
+        <div class="footer-row">
+            <div class="footer-col footer-col__1">
+                <div class="footer-logo"><a href="/"><img src="/img/logo.svg" alt=""></a></div>
+                <p>Oomag © 2021. All rights protected.</p>
+                <a href="#contacts" class="primary-btn"><span>Leave a request</span></a>
+            </div>
+            <div class="footer-col footer-col__2">
+                <ul>
+                    <li>Services</li>
+                    <li><a href="/ci_cd">CI/CD</a></li>
+                    <li><a href="/monitoring">Monitoring</a></li>
+                    <li><a href="/design">System Engineering</a></li>
+                    <!--                    <li><a href="#">Migration</a></li>-->
+                </ul>
+            </div>
+            <div class="footer-col footer-col__3">
+                <ul>
+                    <!--              <li><a href="#">О компании</a></li>-->
+                    <!--              <li><a href="#">Вакансии</a></li>-->
+                </ul>
+            </div>
+            <div class="footer-col footer-col__4">
+                <ul>
+                    <!--              <li><a href="#">Контакты</a></li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->
+<script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script defer src="/js/scripts.min.js"></script>
+</body>
+</html>
