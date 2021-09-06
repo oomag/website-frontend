@@ -80,7 +80,7 @@ $(document).ready(function(){
 		}
 
 		var data = {
-			title: 'new Lead',
+			title: name.val(),
 			pipeline_id: 4,
 			"8a83689a19ba3027695a8765bcd63dd9088c134c": name.val(),
 			"bbf39d6f2aecc762d84617122a788d27a557f59e": phone.val(),
