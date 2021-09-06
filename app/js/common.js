@@ -80,18 +80,31 @@ $(document).ready(function(){
 		}
 
 		var data = {
-			name: name.val(),
-			phone: phone.val(),
-			email: email.val(),
+			title: 'new Lead',
+			pipeline_id: 4,
+			"8a83689a19ba3027695a8765bcd63dd9088c134c": name.val(),
+			"bbf39d6f2aecc762d84617122a788d27a557f59e": phone.val(),
+			"100da5cb123f497f3b2602d72b759bb5ab4b4b6f": email.val(),
 		};
 
 		console.log('data', data);
 
-		carrotquest.identify([
-			{op: 'update_or_create', key: '$phone', value: data.phone},
-			{op: 'update_or_create', key: '$name', value: data.name},
-			{op: 'update_or_create', key: '$email', value: data.email}
-		]);
+		// carrotquest.identify([
+		// 	{op: 'update_or_create', key: '$phone', value: data.phone},
+		// 	{op: 'update_or_create', key: '$name', value: data.name},
+		// 	{op: 'update_or_create', key: '$email', value: data.email}
+		// ]);
+
+		$.ajax({
+			type: 'POST',
+			url: 'https://embily.pipedrive.com/api/v1/deals?api_token=7799e3d04b2eafb208d7bdc3ea0c1da7cfa8bf5a',
+			data: JSON.stringify(data),
+			dataType : 'json',
+			contentType: 'application/json',
+			success: function (response) {
+				console.log(response);
+			}
+		});
 
 		name.val('');
 		phone.val('');
