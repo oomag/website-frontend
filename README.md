@@ -16,3 +16,11 @@
    }
         try_files $uri $uri.html $uri/ =404;
    }
+
+## DEPLYMENT в docker (пример)
+
+Результат билда, контейнер nginx отдающий статику сайта 
+
+```
+docker build -t oomag:latest .
+```
