@@ -59,7 +59,7 @@ $(document).ready(function(){
 
 		$.ajax({
 			type: 'POST',
-			url: 'http://172.17.0.2:11000/contact-us',
+			url: '<%= contactUsURL %>',
 			data: JSON.stringify(data),
 			dataType : 'json',
 			contentType: 'application/json',

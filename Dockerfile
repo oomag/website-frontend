@@ -3,6 +3,9 @@ FROM ubuntu:focal AS builder
 WORKDIR /app
 COPY ./ /app
 
+ARG contactus_url=http://localhost
+ENV CONTACTUS_URL=$contactus_url
+
 RUN apt update && DEBIAN_FRONTEND="noninteractive" apt -yy install nodejs npm python && npm install -g yarn gulp && yarn
 RUN gulp build
 

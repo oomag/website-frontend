@@ -12,8 +12,9 @@ var gulp           = require('gulp'),
 		autoprefixer   = require('gulp-autoprefixer'),
 		ftp            = require('vinyl-ftp'),
 		notify         = require("gulp-notify"),
+		template       = require('gulp-template'),
 		rsync          = require('gulp-rsync');
-		fileinclude 	 = require('gulp-file-include');
+		fileinclude    = require('gulp-file-include');
 		reload 			   = browserSync.reload;
 
 var path = {
@@ -66,12 +67,11 @@ gulp.task('sass', function() {
 });
 
 gulp.task('common-js', function() {
-	return gulp.src([
-		'app/js/common.js',
-		])
-	.pipe(concat('common.min.js'))
-	.pipe(uglify())
-	.pipe(gulp.dest(path.src.js));
+	return gulp.src(['app/js/common.js'])
+		.pipe(template({ contactUsURL: process.env.CONTACTUS_URL || 'http://localhost:11000' }))
+		.pipe(concat('common.min.js'))
+		.pipe(uglify())
+		.pipe(gulp.dest(path.src.js));
 });
 
 gulp.task('js', ['common-js'], function() {
