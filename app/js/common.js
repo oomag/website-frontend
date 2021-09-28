@@ -47,8 +47,29 @@ $(document).ready(function(){
 		sendFormData(name, phone, email, form);
 	});
 
-	// send data
-	function sendFormData(name, phone, email, form) {
+	function sendFormData(name, phone, email) {
+		var ok = validateForm(name, phone, email)
+		if (!ok) {
+			return false
+		}
+
+		var data = { name: name.val(), phone: phone.val(), email: email.val() }
+
+		console.log('Sending form data: ', name, phone, email)
+
+		$.ajax({
+			type: 'POST',
+			url: '<%= contactUsURL %>/contact-us',
+			data: JSON.stringify(data),
+			dataType : 'json',
+			contentType: 'application/json',
+			success: function (response) {
+				console.log(response);
+			}
+		});
+	}
+
+	function validateForm(name, phone, email) {
 		var testVal = {
 			name: {
 				obj: name,
@@ -68,48 +89,54 @@ $(document).ready(function(){
 
 		Object.keys(testVal).forEach(function (row) {
 			if (!testVal[row].val) {
+				console.log(testVal[row],' error ')
 				testVal[row].obj.parent().addClass('-error');
 				hasError = true;
 			} else {
+				console.log(testVal[row],' ok, removing ')
 				testVal[row].obj.parent().removeClass('-error');
 			}
 		});
 
-		if (hasError) {
-			return false
-		}
-
-		var data = {
-			title: name.val(),
-			pipeline_id: 4,
-			"8a83689a19ba3027695a8765bcd63dd9088c134c": name.val(),
-			"bbf39d6f2aecc762d84617122a788d27a557f59e": phone.val(),
-			"100da5cb123f497f3b2602d72b759bb5ab4b4b6f": email.val(),
-		};
-
-		console.log('data', data);
-
-		// carrotquest.identify([
-		// 	{op: 'update_or_create', key: '$phone', value: data.phone},
-		// 	{op: 'update_or_create', key: '$name', value: data.name},
-		// 	{op: 'update_or_create', key: '$email', value: data.email}
-		// ]);
-
-		$.ajax({
-			type: 'POST',
-			url: 'https://embily.pipedrive.com/api/v1/deals?api_token=7799e3d04b2eafb208d7bdc3ea0c1da7cfa8bf5a',
-			data: JSON.stringify(data),
-			dataType : 'json',
-			contentType: 'application/json',
-			success: function (response) {
-				if (response.success) {
-					name.val('');
-					phone.val('');
-					email.val('');
-					$(form).addClass('-sended_success');
-				}
-			}
-		});
-	};
-
+// <<<<<<< HEAD
+// 		if (hasError) {
+// 			return false
+// 		}
+//
+// 		var data = {
+// 			title: name.val(),
+// 			pipeline_id: 4,
+// 			"8a83689a19ba3027695a8765bcd63dd9088c134c": name.val(),
+// 			"bbf39d6f2aecc762d84617122a788d27a557f59e": phone.val(),
+// 			"100da5cb123f497f3b2602d72b759bb5ab4b4b6f": email.val(),
+// 		};
+//
+// 		console.log('data', data);
+//
+// 		// carrotquest.identify([
+// 		// 	{op: 'update_or_create', key: '$phone', value: data.phone},
+// 		// 	{op: 'update_or_create', key: '$name', value: data.name},
+// 		// 	{op: 'update_or_create', key: '$email', value: data.email}
+// 		// ]);
+//
+// 		$.ajax({
+// 			type: 'POST',
+// 			url: 'https://embily.pipedrive.com/api/v1/deals?api_token=7799e3d04b2eafb208d7bdc3ea0c1da7cfa8bf5a',
+// 			data: JSON.stringify(data),
+// 			dataType : 'json',
+// 			contentType: 'application/json',
+// 			success: function (response) {
+// 				if (response.success) {
+// 					name.val('');
+// 					phone.val('');
+// 					email.val('');
+// 					$(form).addClass('-sended_success');
+// 				}
+// 			}
+// 		});
+// 	};
+//
+// =======
+		return !hasError
+	}
 });
