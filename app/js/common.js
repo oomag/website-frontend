@@ -102,13 +102,14 @@ $(document).ready(function(){
 			dataType : 'json',
 			contentType: 'application/json',
 			success: function (response) {
-				console.log(response);
+				if (response.success) {
+					name.val('');
+					phone.val('');
+					email.val('');
+					$(form).addClass('-sended_success');
+				}
 			}
 		});
-
-		name.val('');
-		phone.val('');
-		email.val('');
 	};
 
 });

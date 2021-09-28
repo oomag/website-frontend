@@ -85,16 +85,16 @@ gulp.task('js', ['common-js'], function() {
 });
 
 gulp.task('html', function() {
-	gulp.src(path.src.htmlRu)
+	gulp.src(path.src.htmlEn)
 		.pipe(fileinclude({
 			prefix: '@@',
 			basepath: '@file',
 			indent: true
 		}))
-		.pipe(gulp.dest(path.dist.htmlRu))
+		.pipe(gulp.dest(path.dist.htmlEn))
 		.pipe(reload({stream: true}));
 
-	gulp.src(path.src.htmlEn)
+	gulp.src(path.src.htmlRu)
 		.pipe(fileinclude({
 			prefix: '@@',
 			basepath: '@file',
