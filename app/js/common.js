@@ -59,7 +59,7 @@ $(document).ready(function(){
 
 		$.ajax({
 			type: 'POST',
-			url: '<%= contactUsURL %>',
+			url: '<%= contactUsURL %>/contact-us',
 			data: JSON.stringify(data),
 			dataType : 'json',
 			contentType: 'application/json',
